@@ -4,10 +4,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "26.0.3"
 
     defaultConfig {
-        applicationId "com.enuma.xprize.FB"
+        applicationId "com.maq.xprize.FB"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1

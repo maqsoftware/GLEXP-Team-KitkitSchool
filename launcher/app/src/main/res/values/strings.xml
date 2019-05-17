@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Kitkit Launcher</string>
+    <string name="app_name">Kitkit School Launcher</string>
     <!--<string name="action_settings">Settings</string>-->
     <!--<string name="action_close">Close</string>-->
     <string name="tools_activity_title">Kitkit School Tools</string>
-    <string name="user_default_id">user0</string>
+    <string name="user_default_id" translatable="false">user0</string>
     <string name="launcher_title">Kitkit School</string>
     <string name="btn_setting">Settings</string>
     <string name="btn_credit">Credit</string>
@@ -47,7 +47,7 @@
     <string name="coloring">Coloring</string>
     <string name="camera">Camera</string>
     <string name="album">Album</string>
-    <string name="blackboard">Blackboard</string>
+    <string name="blackboard">Black Board</string>
     <string name="fish_bowl">Sea World</string>
     <string name="writing_board">Writing Board</string>
 

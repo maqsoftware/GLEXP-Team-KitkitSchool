@@ -69,11 +69,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    std::string devicePath = "/sdcard/KitkitSchool/";
-    if (FileUtils::getInstance()->isFileExist(devicePath + "cache.txt")) {
-        FileUtils::getInstance()->setDefaultResourceRootPath(devicePath);
+    std::string englishDevicePath = "/storage/emulated/0/Android/data/com.maq.xprize.kitkitschool.english/files/";
+    std::string hindiDevicePath = "/storage/emulated/0/Android/data/com.maq.xprize.kitkitschool.hindi/files/";
+    if (FileUtils::getInstance()->isFileExist(englishDevicePath)) {
+        FileUtils::getInstance()->setDefaultResourceRootPath(englishDevicePath);
+    } else if (FileUtils::getInstance()->isFileExist(hindiDevicePath)) {
+        FileUtils::getInstance()->setDefaultResourceRootPath(hindiDevicePath);
     }
-    
 #endif
 
     Scene* scene;
@@ -82,7 +84,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //if (book.length()>0) {
     //    scene = HelloWorld::createBookScene(book);
     //} else
-    
+
     {
         scene = MainScene::createScene();
     }

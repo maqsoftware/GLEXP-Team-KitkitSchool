@@ -4,14 +4,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion "25.0.3"
+    buildToolsVersion "26.0.3"
 
     defaultConfig {
-        applicationId "com.enuma.xprize"
+        applicationId "com.maq.xprize.kitkitschool.english"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 30
-        versionName "1.1.20180327.en_US"
+        versionCode 1
+        versionName "1.0.0"
 
         externalNativeBuild {
             ndkBuild {
@@ -19,22 +19,21 @@ android {
                     // skip the NDK Build step if PROP_NDK_MODE is none
                     targets 'MyGame'
                     arguments 'NDK_TOOLCHAIN_VERSION=4.9'
-                    arguments 'APP_PLATFORM=android-'+PROP_APP_PLATFORM
-                    
+                    arguments 'APP_PLATFORM=android-' + PROP_APP_PLATFORM
+
                     def module_paths = [project.file("../../cocos2d").absolutePath,
                                         project.file("../../cocos2d/cocos").absolutePath,
                                         project.file("../../cocos2d/external").absolutePath]
                     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
                         // should use '/'
-                        module_paths = module_paths.collect {it.replaceAll('\\\\', '/')}
+                        module_paths = module_paths.collect { it.replaceAll('\\\\', '/') }
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
-                    }
-                    else {
+                    } else {
                         arguments 'NDK_MODULE_PATH=' + module_paths.join(':')
                     }
-                    
+
                     arguments '-j' + Runtime.runtime.availableProcessors()
-                    abiFilters.addAll(PROP_APP_ABI.split(':').collect{it as String})
+                    abiFilters.addAll(PROP_APP_ABI.split(':').collect { it as String })
                 }
             }
         }
@@ -77,7 +76,7 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
-       release {
+        release {
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 storeFile file(RELEASE_STORE_FILE)
                 storePassword RELEASE_STORE_PASSWORD
@@ -123,6 +122,12 @@ android {
             }
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -133,4 +138,6 @@ dependencies {
     compile project(':kitkitlogger')
 //    englishCompile project(path: ':kitkitlogger', configuration: 'englishRelease')
 //    swahiliCompile project(path: ':kitkitlogger', configuration: 'swahiliRelease')
+    compile 'com.android.support.constraint:constraint-layout:1.1.3'
+    compile project(path: ':downloader_library')
 }

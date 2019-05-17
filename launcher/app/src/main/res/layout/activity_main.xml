@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2B2E33"
     android:orientation="vertical"
-    tools:context="todoschoollauncher.enuma.com.todoschoollauncher.MainActivity">
+    tools:context="com.maq.xprize.kitkitlauncher.english.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -244,7 +244,6 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/launcher_mode_tool_shadow_overlay" />
             </FrameLayout>
-
 
         </LinearLayout>
 

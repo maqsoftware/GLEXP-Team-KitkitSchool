@@ -1,4 +1,4 @@
-package com.enuma.todoschool.xprize_gallery;
+package com.maq.xprize.xprize_gallery;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.enuma.todoschool.xprize_gallery", appContext.getPackageName());
+        assertEquals("com.maq.xprize.xprize_gallery", appContext.getPackageName());
     }
 }

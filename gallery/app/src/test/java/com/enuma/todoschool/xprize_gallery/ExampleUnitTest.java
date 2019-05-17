@@ -1,4 +1,4 @@
-package com.enuma.todoschool.xprize_gallery;
+package com.maq.xprize.xprize_gallery;
 
 import org.junit.Test;
 
